@@ -1,5 +1,5 @@
 import React from 'react';
-import Location from './Location';
+import Market from './Market';
 import { Card } from 'react-bootstrap';
 
 const marketSchedule = [  
@@ -48,12 +48,11 @@ function MarketList(){
         <h3>Market Schedule</h3>
       </Card.Header>
       <Card.Body>
-        {marketSchedule.map((location, index) =>
-          <Location day={location.day}
-          location={location.location}
-          hours={location.hours}
-          booth={location.booth}
-          isSelected={location.isSelected}
+        {marketSchedule.map((market, index) =>
+          <Market day={market.day}
+          location={market.location}
+          hours={market.hours}
+          booth={market.booth}
           key={index}/>
         )}
       </Card.Body>

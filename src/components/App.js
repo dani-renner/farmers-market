@@ -1,15 +1,13 @@
 import React from "react";
 import './../App.css';
 import Header from './Header.js';
-import MarketList from './LocationList.js'
-import LocationControl from './LocationControl';
+import MarketList from './MarketList.js'
 
 function App() {
   return (
     <React.Fragment>
       <Header />
       <MarketList />
-      <LocationControl />
     </React.Fragment>
   );
 }
