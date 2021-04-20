@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const availableProduce = [  
   {  
@@ -268,3 +269,24 @@ const availableProduce = [
     ]
   }
 ];
+
+function Produce() {
+  let date = new Date;
+  const month = availableProduce[date.getMonth()].month;
+  const currentProduce = availableProduce[date.getMonth()].selection;
+  return(
+    <Card style={{width: '30rem'}}>
+      <Card.Title>
+        <h3>{month} Produce</h3>
+      </Card.Title>
+      <Card.Body>
+        {currentProduce.map((item) =>
+      <li>{item}</li>
+      )}
+      </Card.Body>
+    </Card>
+  );
+}
+
+
+export default Produce;
