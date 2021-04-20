@@ -275,10 +275,10 @@ function Produce() {
   const month = availableProduce[date.getMonth()].month;
   const currentProduce = availableProduce[date.getMonth()].selection;
   return(
-    <Card style={{width: '30rem'}}>
-      <Card.Title>
+    <Card>
+      <Card.Header>
         <h3>{month} Produce</h3>
-      </Card.Title>
+      </Card.Header>
       <Card.Body>
         {currentProduce.map((item) =>
       <li>{item}</li>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Market from './Market';
-import { Card } from 'react-bootstrap';
+import { Card, Carousel } from 'react-bootstrap';
 
 const marketSchedule = [  
   {  
@@ -43,19 +43,24 @@ const marketSchedule = [
 
 function MarketList(){
   return (
-    <Card style={{width: '30rem'}}>
+    <Card>
       <Card.Header style={{display: 'flex', flexDirection: 'row'}}>
         <h3>Market Schedule</h3>
       </Card.Header>
-      <Card.Body>
-        {marketSchedule.map((market, index) =>
-          <Market day={market.day}
-          location={market.location}
-          hours={market.hours}
-          booth={market.booth}
-          key={index}/>
-        )}
-      </Card.Body>
+        <Card.Body>
+          <Carousel>
+            {marketSchedule.map((market, index) =>
+              <Carousel.Item>
+                <Market day={market.day}
+                location={market.location}
+                hours={market.hours}
+                booth={market.booth}
+                key={index}/>
+              </Carousel.Item>
+            )}
+          </Carousel>
+        </Card.Body>
+      
     </Card>
   );
 }
